@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Checker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1486324819797-6b051e91d31d') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .glassmorphism {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .weather-info {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            /* Primary color */
+            border: none;
+            border-radius: 10px;
+            /* Rounded corners */
+            padding: 10px 20px;
+            /* Padding */
+            color: #fff;
+            /* Text color */
+            font-size: 16px;
+            /* Font size */
+            font-weight: bold;
+            /* Bold text */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Smooth transitions */
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+            transform: scale(1.05);
+            /* Slight zoom effect */
+        }
+
+        .btn-custom:focus {
+            outline: none;
+            /* Remove default focus outline */
+        }
+
+        .custom-input {
+            padding: 12px 20px;
+            /* Adjust padding for larger input area */
+            border: 2px solid #007bff;
+            /* Primary color border */
+            border-radius: 50px;
+            /* Pill-shaped rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow effect */
+            font-size: 16px;
+            /* Larger font size for better readability */
+            background-color: #ffffff;
+            /* White background for better contrast */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effect */
+        }
+
+        .custom-input:focus {
+            border-color: #0056b3;
+            /* Darker shade on focus */
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+            /* Light blue shadow on focus */
+            outline: none;
+            /* Remove default outline */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="glassmorphism text-center">
+            <h1 class="text-dark mb-4">Weather Checker</h1>
+            <form method="post">
+                <div class="mb-3">
+                    <input type="text" id="location" name="location"
+                        class="form-control form-control-lg border-primary rounded-pill shadow-sm"
+                        placeholder="Enter Location" required>
+                </div><br>
+                <button type="submit" class="btn btn-custom">Check Weather</button>
+            </form>
+            <div class="weather-info mt-4">
+                {{ weather_info|safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
